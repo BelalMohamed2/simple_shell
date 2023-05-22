@@ -1,5 +1,6 @@
 #include "shell.h"
 
+
 /**
  * split_command - a function that will store our command (without spaces) in a char **.
  *@path: the path
