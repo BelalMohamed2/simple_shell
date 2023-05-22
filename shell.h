@@ -19,4 +19,10 @@ extern char **environ;
 /* Macros */
 #define PATH_MAX 1024
 
+/* functions protortypes */
+char **split_command(char *path, char *limit);
+void free_array(char **arr);
+void execute_command(char **command);
+void get_absolute_path(char **command);
+
 #endif /* SHELL_H */

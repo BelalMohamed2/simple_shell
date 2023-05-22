@@ -6,7 +6,7 @@
  *@limit
  */
 
-static char **split_command(char *path, char *limit){
+char **split_command(char *path, char *limit){
 char *ptr = NULL;
 char **command = NULL;
 size_t index = 0;
@@ -31,7 +31,7 @@ command = (char **)realloc(command, ((index +1) * sizeof(char *)));
  * free_array - a function that will free our allocation.
  *@arr: an array of command
  */
-static void free_array(char **arr){
+void free_array(char **arr){
 int i;
 for (i = 0; arr[i]; i++){
 free(arr[i]);
@@ -46,7 +46,7 @@ arr = NULL;
  * execute_command - a function that executes our command with execve.
  *@command: the commant to execute
  */
-static void execute_command(char **command){
+void execute_command(char **command){
 pid_t child_pid = 0;
 int status = 0;
 
@@ -92,11 +92,12 @@ return (EXIT_FAILURE);
 }
   /** writing a prompt */
 write(1, message, sizeof(message));
-
   /** STDIN playback in a loop*/
 while (getline(&input, &input_size, stdin) > 0)
 {
 command = split_command(input, "\n\t");
+get_absolute_path(command);
+
 if(command[0] == NULL){
 printf("command not found\n");
 }else{
