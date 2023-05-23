@@ -1,11 +1,13 @@
 #include "shell.h"
 
 /**
- * get_absolute_path - The function that gets the contents of the $PATH variable and returns the absolute path
+ * get_absolute_path - The function that gets the contents
+ * of the $PATH variable and returns the absolute path
  *@command: the command enter by user.
  */
 
-void get_absolute_path(char **command){
+void get_absolute_path(char **command) {
+
 char *path = strdup(getenv("PATH"));
 char **path_split = NULL;
 char *bin = NULL;
@@ -13,7 +15,7 @@ int i;
 
 /** if the path is null, we create a path */
 if (path == NULL)
-  path = strdup("/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin");
+path = strdup("/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin");
 
 /** if command is not the absolute path,
  * we look for the absolute path of binary

@@ -8,6 +8,7 @@
  */
 
 char **split_command(char *path, char *limit){
+
 char *ptr = NULL;
 char **command = NULL;
 size_t index = 0;
@@ -97,14 +98,15 @@ write(1, message, sizeof(message));
 while (getline(&input, &input_size, stdin) > 0)
 {
 command = split_command(input, "\n\t");
-get_absolute_path(command);
 
-if(command[0] == NULL){
-printf("command not found\n");
-}else{
+if (command[0] == NULL)
+printf("Command not founf\n");
+else if (is_builtin(command[0]) == 0){
+get_absolute_path(command);
 execute_command(command);
-}
- 
+}else{
+execute_builtin(command);
+} 
 write(1, message, sizeof(message));
 free_array(command);
 }
