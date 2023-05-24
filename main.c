@@ -34,9 +34,6 @@ char *line = NULL;
 char **arg_arr;
 size_t size = 0;
 ssize_t nread = 0;
-/*
- * extern char **environ;
- */
 pid_t child_pid;
 int stat;
 
@@ -51,7 +48,7 @@ arg_arr = separat_line(line, arg_arr);
 child_pid = fork();
 if (child_pid == 0)
 {
-if (execve(arg_arr[0], arg_arr, NULL) == -1)
+if (execve(arg_arr[0], arg_arr, environ) == -1)
 {
 perror("./shell");
 break;
