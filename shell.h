@@ -27,12 +27,14 @@ char **split_command(char *path, char *limit);
 void free_array(char **arr);
 void execute_command(char **command);
 void get_absolute_path(char **command);
+int limit(char c, char *limit);
+int alpha(int c);
+int atoi_style(char *s);
 
 /* Builtin prototypes */
 void builtin_cd(char *path);
 void builtin_pwd(void);
 void builtin_echo(const char *input);
-void builtin_exit();
 int is_builtin(char *command);
 void execute_builtin(char **builtin);
 #endif /* SHELL_H */
