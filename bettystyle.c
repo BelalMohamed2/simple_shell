@@ -1,18 +1,5 @@
 #include "shell.h"
 
-/**
- * limit - checks if character is a limit
- * @c: the char to check
- * @limit: the delimeter string
- * Return: 1
- */
-int limit(char c, char *limit)
-{
-while (*limit)
-if (*limit++ == c)
-return (1);
-return (0);
-}
 
 /**
  * alpha - checks for alphabetic character
@@ -25,6 +12,21 @@ int alpha(int c)
 if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 return (1);
 else
+return (0);
+}
+
+
+/**
+ * limit - checks if character is a limit
+ * @c: the char to check
+ * @limit: the delimeter string
+ * Return: 1
+ */
+int limit(char c, char *limit)
+{
+while (*limit)
+if (*limit++ == c)
+return (1);
 return (0);
 }
 
