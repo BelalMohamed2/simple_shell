@@ -8,7 +8,7 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 3-Who invented the B programming language (the direct predecessor to the C programming language)
 4-Who is Ken Thompson
 5-How does a shell work
-What is a pid and a ppid
+6-What is a pid and a ppid
 How to manipulate the environment of the current process
 What is the difference between a function and a system call
 How to create processes
