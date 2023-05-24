@@ -9,7 +9,7 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 4-Who is Ken Thompson
 5-How does a shell work
 6-What is a pid and a ppid
-How to manipulate the environment of the current process
+7-How to manipulate the environment of the current process
 What is the difference between a function and a system call
 How to create processes
 What are the three prototypes of main
