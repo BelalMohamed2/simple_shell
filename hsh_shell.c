@@ -1,9 +1,4 @@
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <sys/wait.h>
-#include <sys/types.h>
+#include "shell.h"
 /**
  * separat_line - separate the line enterdd into array
  * @line: the input line from stdin
@@ -21,7 +16,7 @@ tok = strtok(NULL, " \n");
 i = 1;
 while (tok != NULL)
 {
-arg_arr = realloc(arg_arr, (i + 2) * sizeof(char *));
+arg_arr = _realloc(arg_arr, sizeof(arg_arr), (i + 2) * sizeof(char *));
 arg_arr[i] = tok;
 tok = strtok(NULL, " \n");
 i++;
