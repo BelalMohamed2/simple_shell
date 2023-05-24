@@ -7,7 +7,7 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 2-Who wrote the first version of the UNIX shell
 3-Who invented the B programming language (the direct predecessor to the C programming language)
 4-Who is Ken Thompson
-How does a shell work
+5-How does a shell work
 What is a pid and a ppid
 How to manipulate the environment of the current process
 What is the difference between a function and a system call
