@@ -53,6 +53,8 @@ putchar('\n');
 /**
  * is_builtin - the built-in for it to use the environment.
  * @command: the command
+ *
+ * Return: 0
  */
 int is_builtin(char *command)
 {
@@ -69,8 +71,10 @@ return (0);
 
 
 /**
-  * is_builtin - the built-in for it to use the environment.
+  * execute_builtin - the built-in for it to use the environment.
   * @builtin: the builtin
+  *
+  *Return: Nothing
   */
 void execute_builtin(char **builtin)
 {

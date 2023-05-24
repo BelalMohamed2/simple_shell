@@ -5,7 +5,9 @@
  * split_command - a function that will store
  * our command (without spaces) in a char **.
  *@path: the path
- *@limit
+ *@limit: the limit
+ *
+ * Return: 0.
  */
 
 char **split_command(char *path, char *limit)
