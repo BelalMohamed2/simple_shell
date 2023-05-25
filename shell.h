@@ -41,4 +41,9 @@ void builtin_pwd(void);
 void builtin_echo(const char *input);
 int is_builtin(char *command);
 void execute_builtin(char **builtin);
+
+char *own_strncpy(char *destination, char *source, int n);
+char *own_strncat(char *destination, char *source, int n);
+char *own_strchr(char *string, char character);
+
 #endif /* SHELL_H */
