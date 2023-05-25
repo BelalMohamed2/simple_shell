@@ -26,16 +26,17 @@ write(1, message, sizeof(message));
 while (getline(&input, &input_size, stdin) > 0)
 {
 command = split_command(input, " \n\t");
-get_absolute_path(command);
-
 if (command[0] == NULL)
 printf("Command not found\n");
-else
+else if (is_builtin(command[0]) == false)
+{
+get_absolute_path(command);
 execute_command(command);
-
+}
+else
+execute_builtin(command);
 write(1, message, sizeof(message));
 free_array(command);
-
 }
 free(input);
 return (0);
