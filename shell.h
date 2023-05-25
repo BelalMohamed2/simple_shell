@@ -30,6 +30,10 @@ void get_absolute_path(char **command);
 int limit(char c, char *limit);
 int alpha(int c);
 int atoi_style(char *s);
+char **separat_line(char *line, char **arg_arr);
+char *_memcpy(char *dest, char *src, unsigned int n);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+
 
 /* Builtin prototypes */
 void builtin_cd(char *path);
