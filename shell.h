@@ -12,18 +12,30 @@
 #include <time.h>
 #include <stdbool.h>
 
-/* environment variables */
+/** Structures */
+struct info
+{
+  int final_exit;
+  int ln_count;
+} info;
+
+struct flags
+{
+  bool interactive;
+}
+  
+/* environments variables */
 extern char **environ;
 extern __sighandler_t signal(int __sig, __sighandler_t __handler);
 
-/* handle built ins */
-int che_builtin(char **cmd, char *buf);
+/* builtins */
+int che_builtin(char **command, char *input);
 void promp_user(void);
 void handle_signal(int m);
 char **tokenize(char *line);
 char *testPath(char **path, char *command);
 char *app_path(char *p, char *cmd);
-int builtin_handling(char **cmd, char *line);
+int builtin_handling(char **command, char *line);
 void exit_command(char **cmd, char *line);
 
 void print_environment(void);
@@ -37,7 +49,7 @@ char *str_locate(char *s, char c);
 void execute_cmd(char *cp, char **cmd);
 char *path_finding(void);
 
-/* helper function for efficient free */
+/* free input */
 void free_buffers(char **buffer);
 
 struct builtin
@@ -46,16 +58,6 @@ struct builtin
 	char *exit;
 } builtin;
 
-struct info
-{
-	int final_exit;
-	int ln_count;
-} info;
-
-struct flags
-{
-	bool interactive;
-} flags;
 
 #endif /* SHELL_H */
 

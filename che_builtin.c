@@ -1,17 +1,18 @@
 #include "shell.h"
+
 /**
  *che_builtin- checks to see built_in function
- *@cmd: separate inputs
- *@buffer: line from get line
- *Return: 1 if cmd  0 if cmd is not
+ *@command: separate inputs
+ *@input: line from get line
+ *Return: 1 or 0.
  */
-int che_builtin(char **cmd, char *buffer)
+int che_builtin(char **command, char *input)
 {
-if (builtin_handling(cmd, buffer))
+if (builtin_handling(command, input))
 return (1);
-else if (**cmd == '/')
+else if (**command == '/')
 {
-execute_cmd(cmd[0], cmd);
+execute_cmd(command[0], command);
 return (1);
 }
 return (0);
