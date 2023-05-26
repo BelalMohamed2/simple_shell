@@ -11,7 +11,7 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 6-What is a pid and a ppid
 7-How to manipulate the environment of the current process
 8-What is the difference between a function and a system call
-How to create processes
+9-How to create processes
 What are the three prototypes of main
 How does the shell use the PATH to find the programs
 How to execute another program with the execve system call
