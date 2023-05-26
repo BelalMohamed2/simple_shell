@@ -5,8 +5,7 @@
 * @path: the separated path
 * @command: command
 *
-* Return: path appended with command on success
-* NULL on failure
+* Return: string
 */
 char *testPath(char **path, char *command)
 {

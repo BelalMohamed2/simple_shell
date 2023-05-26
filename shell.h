@@ -12,11 +12,23 @@
 #include <time.h>
 #include <stdbool.h>
 
+struct builtin
+{
+  char *env;
+  char *exit;
+} builtin;
+
+struct info
+{
+  int final_exit;
+  int ln_count;
+} info;
+
 /* environment variables */
 extern char **environ;
 extern __sighandler_t signal(int __sig, __sighandler_t __handler);
 
-/* handle built ins */
+/* builtins */
 int che_builtin(char **cmd, char *buf);
 void promp_user(void);
 void handle_signal(int m);
@@ -28,7 +40,7 @@ void exit_command(char **cmd, char *line);
 
 void print_environment(void);
 
-/* string handlers */
+/* string functions */
 int strcomp(char *s1, char *s2);
 int strlenght(char *s);
 int str_n_cmp(char *s1, char *s2, int n);
@@ -37,38 +49,11 @@ char *str_locate(char *s, char c);
 void execute_cmd(char *cp, char **cmd);
 char *path_finding(void);
 
-/* helper function for efficient free */
+/* free memory */
 void free_buffers(char **buffer);
-/**
- * struct builtin - attributes
- * @env: env.
- * @exit: exit.
- *
- * Description: The attributes of builtin.
- */
-struct builtin
-{
-	char *env;
-	char *exit;
-} builtin;
-/**
- * struct info - info sturct
- * @final_exit: The name of final exit.
- * @ln_count: the ln count
- *
- * Description: The info struct.
- */
-struct info
-{
-	int final_exit;
-	int ln_count;
-} info;
-/**
- * struct flags - attributes
- * @interactive: interactive elemnt.
- *
- * Description: The flage strunct.
- */
+
+
+/** Structures*/
 struct flags
 {
 	bool interactive;
