@@ -10,7 +10,7 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 5-How does a shell work
 6-What is a pid and a ppid
 7-How to manipulate the environment of the current process
-What is the difference between a function and a system call
+8-What is the difference between a function and a system call
 How to create processes
 What are the three prototypes of main
 How does the shell use the PATH to find the programs
