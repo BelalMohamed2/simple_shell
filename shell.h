@@ -12,11 +12,18 @@
 #include <time.h>
 #include <stdbool.h>
 
+
 struct builtin
 {
   char *env;
   char *exit;
 } builtin;
+
+/** Structures*/
+struct flags
+{
+  bool interactive;
+} flags;
 
 struct info
 {
@@ -24,9 +31,33 @@ struct info
   int ln_count;
 } info;
 
+typedef struct informations
+{
+  int argc;
+  char **argv;
+  char *args;
+  char *chemin;
+  unsigned int line_count;
+  int histcount;
+  int linecount_flag;
+  char **environ;
+  int env_changed;
+  int err_num;
+  int readfd;
+  int status;
+  char *fname;
+  char **cmd_buf;
+  int cmd_buf_type;
+} my_info;
+
 /* environment variables */
 extern char **environ;
 extern __sighandler_t signal(int __sig, __sighandler_t __handler);
+
+#define ENTREE 1024
+#define TAILLE_ENTREE 1024
+#define FLASH -1
+#define CMD_NORM0
 
 /* builtins */
 int che_builtin(char **cmd, char *buf);
@@ -37,7 +68,7 @@ char *testPath(char **path, char *command);
 char *app_path(char *p, char *cmd);
 int builtin_handling(char **cmd, char *line);
 void exit_command(char **cmd, char *line);
-
+ssize_t my_input(my_info *info, char **entree, size_t *longueur);
 void print_environment(void);
 
 /* string functions */
@@ -52,12 +83,6 @@ char *path_finding(void);
 /* free memory */
 void free_buffers(char **buffer);
 
-
-/** Structures*/
-struct flags
-{
-	bool interactive;
-} flags;
 
 #endif /* SHELL_H */
 
