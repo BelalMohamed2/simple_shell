@@ -42,11 +42,11 @@ typedef struct informations
   int linecount_flag;
   char **environ;
   int env_changed;
+  char **cmd_entree;
   int err_num;
   int readfd;
   int status;
   char *fname;
-  char **cmd_buf;
   int cmd_buf_type;
 } my_info;
 
@@ -57,7 +57,8 @@ extern __sighandler_t signal(int __sig, __sighandler_t __handler);
 #define ENTREE 1024
 #define TAILLE_ENTREE 1024
 #define FLASH -1
-#define CMD_NORM0
+#define CMD_NORM 0
+#define LINE 0
 
 /* builtins */
 int che_builtin(char **cmd, char *buf);
